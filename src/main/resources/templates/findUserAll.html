@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="shortcuticon"href="../resources/favicon.ico"th:href="@{/static/favicon.ico}"/>
+
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" width="50%">
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <tr th:each="user:${list}" >
+            <td th:text="${user.getUserId()}"/>
+            <td th:text="${user.getUserName()}"/>
+            <td th:text="${user.getUserAge()}"/>
+            <td>
+                <a th:href="@{/user/preUser(id=${user.getUserId()})}">更新</a>
+                <a th:href="@{/user/deleteUser(id=${user.getUserId()})}">删除</a>
+            </td>
+        </tr>
+    </table>
+    <a th:href="@{/userInsert}">添加</a>
+</body>
+</html>

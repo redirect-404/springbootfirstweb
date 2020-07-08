@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="shortcuticon"href="../resources/favicon.ico"th:href="@{/static/favicon.ico}"/>
+
+<head>
+    <title>Title</title>
+</head>
+<body>
+    <form th:action="@{/user/updateUser}" method="post">
+        <input type="hidden" name="userId" th:value="${user.getUserId()}"/>
+        用户名：<input type="text" name="userName" th:value="${user.getUserName()}"/><br/>
+        年龄：<input type="text" name="userAge" th:value="${user.getUserAge()}"/><br/>
+        <input type="submit" value="ok"/>
+    </form>
+
+</body>
+</html>
